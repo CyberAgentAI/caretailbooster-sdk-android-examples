@@ -1,1 +1,0 @@
-# caretailbooster-sdk-android
