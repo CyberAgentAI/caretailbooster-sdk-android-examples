@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
                 userId = "user_id",
                 crypto = "crypto",
                 tagGroupId = "banner1",
-                mode = EnvMode.LOCAL
+                mode = EnvMode.MOCK
             )
             val reward1 = useRetailBooster(
                 context = this@MainActivity,
@@ -60,7 +60,7 @@ class MainActivity : ComponentActivity() {
                 userId = "user_id",
                 crypto = "crypto",
                 tagGroupId = "reward1",
-                mode = EnvMode.LOCAL,
+                mode = EnvMode.MOCK,
                 callback = callback,
                 options = options
             )

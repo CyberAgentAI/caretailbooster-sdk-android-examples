@@ -77,6 +77,9 @@ android {
         create("production") {
             dimension = "environment"
         }
+        create("mock") {
+            dimension = "environment"
+        }
     }
 
 }
