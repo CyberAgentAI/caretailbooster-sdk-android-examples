@@ -1,13 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.compose.compiler)
+//    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.org.jetbrains.kotlin.serialization)
 }
 
 android {
     namespace = "com.github.cyberagentai.caretailbooster_sdk_android_examples"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.github.cyberagentai.caretailbooster_sdk_android_examples"
@@ -50,17 +50,17 @@ android {
         buildConfig = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.14"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    buildToolsVersion = "35.0.0"
+    buildToolsVersion = "34.0.0"
 
     lint {
-        targetSdk = 35
+        targetSdk = 34
     }
 
     flavorDimensions.add("environment")
