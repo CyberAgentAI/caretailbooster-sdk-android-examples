@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    // 2.系以上から必要
 //    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.org.jetbrains.kotlin.serialization)
 }
