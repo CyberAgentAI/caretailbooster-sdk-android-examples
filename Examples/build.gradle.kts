@@ -93,6 +93,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.media3.ui)
     implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.runtime.android)
 
     // Kotlin Serialization
     implementation(libs.serialization)
