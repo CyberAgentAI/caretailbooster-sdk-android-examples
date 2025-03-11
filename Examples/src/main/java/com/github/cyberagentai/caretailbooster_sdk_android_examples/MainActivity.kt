@@ -16,18 +16,18 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.ui.Modifier
 import com.github.cyberagentai.caretailbooster_sdk_android_examples.theme.AndroidSDKTheme
-import com.retaiboo.caretailboostersdk.useRetailBooster
-import com.retaiboo.caretailboostersdk.Callback
-import com.retaiboo.caretailboostersdk.EnvMode
-import com.retaiboo.caretailboostersdk.Options
-import com.retaiboo.caretailboostersdk.RewardAdOptions
+import com.retaiboo.caretailboostersdk.useCaRetailBooster
+import com.retaiboo.caretailboostersdk.CaRetailBoosterCallback
+import com.retaiboo.caretailboostersdk.CaRetailBoosterEnvMode
+import com.retaiboo.caretailboostersdk.CaRetailBoosterOptions
+import com.retaiboo.caretailboostersdk.CaRetailBoosterRewardAdOptions
 
 class MainActivity : ComponentActivity() {
 
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val callback = object : Callback {
+        val callback = object : CaRetailBoosterCallback {
             override fun onRewardModalClose() {
                 Log.d("callback", "onRewardModalClose: ")
             }
@@ -36,31 +36,31 @@ class MainActivity : ComponentActivity() {
                 Log.d("callback", "onMarkSucceeded: ")
             }
         }
-        val rewardAdOptions = object : RewardAdOptions {
+        val rewardAdOptions = object : CaRetailBoosterRewardAdOptions {
             override val width = 173
             override val height = 210
         }
-        val options = object : Options {
+        val options = object : CaRetailBoosterOptions {
             override val rewardAd = rewardAdOptions
         }
 
         enableEdgeToEdge()
         setContent {
-            val banner1 = useRetailBooster(
+            val banner1 = useCaRetailBooster(
                 context = this@MainActivity,
                 mediaId = "media_id",
                 userId = "user_id",
                 crypto = "crypto",
                 tagGroupId = "banner1",
-                mode = EnvMode.MOCK
+                mode = CaRetailBoosterEnvMode.MOCK
             )
-            val reward1 = useRetailBooster(
+            val reward1 = useCaRetailBooster(
                 context = this@MainActivity,
                 mediaId = "media_id",
                 userId = "user_id",
                 crypto = "crypto",
                 tagGroupId = "reward1",
-                mode = EnvMode.MOCK,
+                mode = CaRetailBoosterEnvMode.MOCK,
                 callback = callback,
                 options = options
             )
