@@ -85,6 +85,10 @@ android {
 
 }
 
+configurations.all {
+    exclude("androidx.lifecycle", "lifecycle-livedata-core")
+}
+
 dependencies {
     // Jetpack Compose
     implementation(libs.androidx.activity.compose)
